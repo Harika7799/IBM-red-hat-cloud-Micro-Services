@@ -58,9 +58,13 @@ public class Test {
 			} else {
 				System.out.println(emp.toString());
 			}
-
+		}catch(NullPointerException e) {
+			System.err.println("NullPointer exception");
+			e.printStackTrace();
+		}
+	}
 		
-		}catch (ArrayIndexOutOfBoundsException e) {
+		/*}catch (ArrayIndexOutOfBoundsException e) {
 			System.err.println("array index out of bound exception");
 		}
 		catch (ArithmeticException e) {
@@ -68,7 +72,7 @@ public class Test {
 			e.printStackTrace();
 		}
 		
-	}
+	}*/
 }
 
 
