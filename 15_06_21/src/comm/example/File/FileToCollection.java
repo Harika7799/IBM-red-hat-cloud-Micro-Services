@@ -1,5 +1,4 @@
 package comm.example.File;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -27,6 +26,10 @@ public class FileToCollection {
 		s.setEmail(str[3]);
 		s.setGpa(Double.parseDouble(str[3]));
 		set.add(s);
+	}
+	public Set<Student> create() {
+		
+		return null;
 	}
 	input.close();
 	return set;

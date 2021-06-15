@@ -11,7 +11,7 @@ public static void main(String[] args) throws IOException {
         int c;
         
         while ((c = in.read()) != -1){
-            System.out.println((char)c);
+            System.out.println((char)c+2);
             out.write(c);
         }
         
