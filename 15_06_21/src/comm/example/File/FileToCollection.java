@@ -27,10 +27,7 @@ public class FileToCollection {
 		s.setGpa(Double.parseDouble(str[3]));
 		set.add(s);
 	}
-	public Set<Student> create() {
-		
-		return null;
-	}
+
 	input.close();
 	return set;
 
