@@ -1,13 +1,15 @@
 package comm.example;
 
-public class Horbour {
-	public static void main(String[] args) {
+public class Horbour
+{
+	public static void main(String[] args)
+	{
 		Horbour hb=new Horbour();
 		RiverBarge riverBarge=new RiverBarge();
 		System.out.println(riverBarge.calcTripDistance(100.0, 200.0));
 		System.out.println(riverBarge.calcFuelEfficiency(400));
 		hb.givePermissionToDock(riverBarge);
-		Plan pl= new Plan();
+		Plane pl= new Plane();
 		pl.TakeOff();
 		pl.Fly();
 		pl.land();
@@ -20,12 +22,9 @@ public class Horbour {
 		mon.land();
 		System.out.println(mon.calcTripDistance(100, 900));
 		hb.givePermissionToDock(mon);
-
 	}
-
-}
-
-	private void givePermissionToDock(Worker s) {
+private void givePermissionToDock(Worker s) 
+{
 		s.dock();
 		
 	}

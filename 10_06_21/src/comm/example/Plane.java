@@ -1,6 +1,6 @@
 package comm.example;
 
-public class Plan extends AirWays implements Worker {
+public class Plane extends AirWays implements Worker {
 
 	
 	public void dock() {

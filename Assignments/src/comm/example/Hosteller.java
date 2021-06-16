@@ -38,6 +38,11 @@ public class Hosteller extends Student {
 	public String toString() {
 		return "Hosteller [hostelName=" + hostelName + ", roomNumber=" + roomNumber + "]";
 	}
+
+	public void setPhone(int n1) {
+		
+		
+	}
 	
 
 }

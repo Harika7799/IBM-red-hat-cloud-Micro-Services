@@ -27,6 +27,7 @@ public class Main1 {
 	  {
 	  System.out.println("Enter the marks for subject "+i);
 	  int m=sc.nextInt();
+	  
 	  if(m<=0||m>100)
 	  {
 	   System.out.println("Invalid Mark");
@@ -39,6 +40,7 @@ public class Main1 {
 	  return student;
 	  
 	 }
+
 
 	 public static void main(String[] args) {
 	  
