@@ -58,16 +58,23 @@ public class App {
 		         break; 
 		        case 3:
 		        	List<Order>list1=service.getAllOrder(); System.out.println("saving orders please wait");
-		        	factory.saveOrder(list1); break;
+		        	factory.saveOrder(list1); 
+		        	break;
 		        case 4:
-		        	List<Order>orderList=factory.displayAllOrders(); for(Order order:orderList) {
+		        	List<Order>orderList=factory.displayAllOrders();
+		        	for(Order order:orderList) {
 	                 System.out.println(order);
 	                 }
 		        	break;
 		        case 0:
 		
-		                System.out.println("Bye"); System.exit(0); break; default:
-		                 System.out.println("Invalid choice."); break; }
+		                System.out.println("Bye"); 
+		                System.exit(0);
+		                break; 
+		         default:
+		                 System.out.println("Invalid choice.");
+		                 break;
+		                 }
 		  
 		  } while (x !=0);
 		 

@@ -11,10 +11,12 @@ import java.io.*;
 
 import comm.example.test.Student;
 public class FileToCollection {
+	
 	private Set<Student> set=new TreeSet<Student>();
 	File inputFile =new File("students.txt");
-	private Reader reader;
-	BufferedReader input=new BufferedReader(reader);
+	public Set<Student>create()throws IOException{
+	FileReader f =new FileReader(inputFile);
+	BufferedReader input=new BufferedReader(f);
 	String l =null;
 	while((l=input.readLine())!=null)
 	{
@@ -27,6 +29,7 @@ public class FileToCollection {
 		s.setGpa(Double.parseDouble(str[3]));
 		set.add(s);
 	}
+	
 
 	input.close();
 	return set;

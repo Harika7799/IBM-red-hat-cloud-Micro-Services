@@ -1,6 +1,7 @@
 package comm.input;
 
 	public class Student implements Comparable {
+		
 		private String studentId;
 		private String firstName;
 		private String lastName;
@@ -9,6 +10,15 @@ package comm.input;
 		public Student() {
 			super();
 		}
+		public Student(String studentId, String firstName, String lastName, String email, double gpa) {
+			super();
+			this.studentId = studentId;
+			this.firstName = firstName;
+			this.lastName = lastName;
+			this.email = email;
+			this.gpa = gpa;
+		}
+		
 		public String getStudentId() {
 			return studentId;
 		}
