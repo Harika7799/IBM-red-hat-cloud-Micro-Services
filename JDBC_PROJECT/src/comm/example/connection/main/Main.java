@@ -10,6 +10,7 @@ import java.util.Random;
 import java.util.Iterator;
 import java.util.List;
 import comm.example.connection2.EmployeeDao;
+import comm.example.connection2.EmployeeNotFoundException;
 import comm.example.connection2.Employee_D;
 import comm.example.connection2.File_F;
 import comm.example.jdbc.Employee_J;
@@ -34,10 +35,11 @@ public class Main {
 			x = Integer.parseInt(br.readLine());
 			switch (x) {
 			case 1:
-				
+				System.out.print("Enter Id: ");
+				email =br.readLine();
 				System.out.print("Enter first name: ");
 				firstName = br.readLine();
-				System.out.print("Enter last name");
+				System.out.print("Enter last name:");
 				lastName = br.readLine();
 				System.out.print("Enter email: ");
 				email = br.readLine();
@@ -51,12 +53,12 @@ public class Main {
 					System.out.println(iterator.next());
 				break;
 			case 3:
-				System.out.print("enter id: ");
-				Integer id = Integer.parseInt(br.readLine());
-				List<Employee_J> list=service.findById(id);
+				System.out.println("Enter Id: ");
+				Integer Id = Integer.parseInt(br.readLine());
+				List<Employee_J> list=service.findById(Id);
 				if(list.isEmpty())
 				{
-					System.out.println("NO such record found with id: "+id);
+					System.out.println("NO such record found with id: "+Id);
 				}
 				else
 				{
@@ -81,6 +83,24 @@ public class Main {
 					System.out.println("File Not Available");
 					
 				}break;
+			case 5:
+				System.out.print("enter id: ");
+				Id = Integer.parseInt(br.readLine());
+				e=service.updateEmployee(Id);
+				System.out.println("Updated Employee:\n"+e);
+				break;
+			case 6:
+				try {
+					System.out.println("Enter Id: ");
+					Id = Integer.parseInt(br.readLine());
+					List<Employee_J> E =service.deleteEmployee(Id);
+					System.out.println("Employee id Deleted.. ");
+					System.out.println(E);
+					
+				}catch(EmployeeNotFoundException m) {
+					
+					
+				}
 		
 			case 0:
 				System.out.println("Thank uu");

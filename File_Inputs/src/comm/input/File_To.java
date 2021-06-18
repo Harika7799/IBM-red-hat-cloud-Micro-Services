@@ -3,7 +3,6 @@ package comm.input;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.util.Iterator;
 import java.util.Set;
@@ -26,15 +25,16 @@ public static void main(String[] args)throws IOException{
 	PrintWriter p = new PrintWriter(f);
 	Iterator<Student> i =set.iterator();
 	Student stu =null;
-	OutputStreamWriter writer;
+	//OutputStreamWriter writer;
 	while(i.hasNext()) 
 	{
 		stu =i.next();
 		String str= stu.getStudentId()+","+stu.getFirstName()+stu.getLastName()+","+stu.getGpa();
-		writer.println(stu.toString());
-		System.out.println(stu);
+		p.println(str);
+		System.out.println(str);
 	}
-	writer.close();
+	p.close();
+	f.close();
 }
 }
 	
