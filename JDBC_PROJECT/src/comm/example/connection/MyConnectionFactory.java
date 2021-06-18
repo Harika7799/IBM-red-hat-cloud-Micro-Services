@@ -8,7 +8,7 @@ public class MyConnectionFactory {
 	private static MyConnectionFactory mcf;
 	private MyConnectionFactory() throws SQLException
 	{
-		conn =DriverManager.getConnection("jdbc:mysql://localhost:3306/employee","root","root");
+		conn =DriverManager.getConnection("jdbc:mysql://localhost:3306/hr","root","root");
 	}
 	public static MyConnectionFactory createFactory() throws SQLException
 	{

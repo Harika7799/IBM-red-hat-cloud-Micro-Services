@@ -10,7 +10,7 @@ public interface EmployeeDao {
 
 	
 		public List<Employee_J>getAllEmployees() throws SQLException;
-		
+		public List<Employee_J> findById(Integer id)throws SQLException;
 		
 	}
 

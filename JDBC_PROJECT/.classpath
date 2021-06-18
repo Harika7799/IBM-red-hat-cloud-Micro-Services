@@ -8,5 +8,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="C:/Users/001ZNC744/Downloads/mysql-connector-java-8.0.25.zip"/>
 	<classpathentry kind="lib" path="C:/Users/001ZNC744/Downloads/lombok.jar"/>
+	<classpathentry kind="lib" path="C:/Users/001ZNC744/Downloads/mysql-connector-java-8.0.25.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

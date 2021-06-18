@@ -27,4 +27,10 @@ public class Employee_I implements Employee_S {
 		return E.getAllEmployees();
 	}
 
+	@Override
+	public List<Employee_J> findById(Integer id) throws SQLException {
+		
+		return E.findById(id);
+	}
+
 }
