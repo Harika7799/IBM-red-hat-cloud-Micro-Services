@@ -8,7 +8,7 @@ public class Main2 {
 	public static void main(String[] args) {
 		Connection conn = null;
 		try {
-			String url ="jdbc :mysql://localhost:3306/hr";
+			String url ="jdbc:mysql://localhost:3306/hr";
 			Properties info =new Properties();
 			info.put("user", "root");
 			info.put("password", "root");
