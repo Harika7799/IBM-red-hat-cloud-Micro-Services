@@ -15,8 +15,8 @@ public class Account {
 	
 	private String A_Id;
 	private String A_HolderName;
-	private A_Type A_Type;
-	private Address Address;
+	private A_Type AType;
+	private Address address;
 	private double Balance;
 	
 	

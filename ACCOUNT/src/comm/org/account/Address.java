@@ -17,6 +17,9 @@ import lombok.ToString;
 
 
 public class Address {
+	public Address(String a_Line1, String a_Line2, comm.org.account.City valueOf) {
+		
+	}
 	private String AddressLine1;
 	private String AddressLine2;
 	private String City;

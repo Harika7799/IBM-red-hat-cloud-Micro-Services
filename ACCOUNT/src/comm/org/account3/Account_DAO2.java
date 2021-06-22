@@ -13,12 +13,14 @@ import comm.org.account.Account;
 import comm.org.account1.MyConnectionFactory;
 import comm.org.account2.Account_D1;
 
-public class Account_DAO2 implements Account_DAO{
+public class Account_DAO2 implements Account_DAO
+{
 	private Connection conn;
 	private List<Account_D1> accounts;
+	private Account acc;
 	private MyConnectionFactory mcf;
 	{
-		{
+		
 			try {
 				mcf = MyConnectionFactory.createFactory();
 				conn = mcf.getMyConnection();
@@ -26,17 +28,17 @@ public class Account_DAO2 implements Account_DAO{
 
 				e.printStackTrace();
 			}
-		}
 	}
+	
 	@Override
 	public Account createAccount(Account account) throws SQLException {
 		PreparedStatement ps = conn.prepareStatement("insert into account values(?,?,?,?,?,?,?)");
 		ps.setString(1, account.getA_Id());
-		ps.setString(2, account.getA_Type().getMessage());
+		ps.setString(2, account.getAType().getMessage());
 		ps.setString(3, account.getA_HolderName());
 	    ps.setString(4, account.getAddress().getAddressLine1());
 		ps.setString(5, account.getAddress().getAddressLine2());
-		ps.setString(6, account.getAddress().getCity().getCity());
+		ps.setString(6, account.getAddress().getCity());
 		ps.setDouble(7, account.getBalance());
 		ps.executeUpdate();
 		return account;
@@ -59,11 +61,40 @@ public class Account_DAO2 implements Account_DAO{
 	@Override
 	public void deposite(double amount) throws SQLException {
 		
+				acc.setBalance(amount + acc.getBalance());
+				System.out.println(amount +"Rs "+"Deposited Successfully");
+				System.out.println("Balance in Rs" +acc.getBalance());
+				PreparedStatement ps =conn.prepareStatement("insert into Account values()");
+				ps.setDouble(1, acc.getBalance());
+				ps.executeUpdate();
+			
+		
 		
 	}
 	@Override
-	public double withdrawl(double amount) throws SQLException {
-		return 0;
+	public double withdrawl(double amount) throws SQLException, AccountNotValidException{
+		if(acc.getBalance() > 1000)
+		{
+			double newAmount = acc.getBalance() - amount;
+			if(newAmount >1000)
+			{
+				acc.setBalance(newAmount);
+				PreparedStatement ps =conn.prepareStatement("insert into Account values()");
+				ps.setDouble(1, acc.getBalance());
+				ps.executeUpdate();
+				
+			}
+			
+		else
+			{
+				throw new AccountNotValidException("Amount Not Valid to WithDraw");
+			}
+		}
+			else
+			{
+				throw new AccountNotValidException("Amount Not Valid to WithDraw");
+			}
+		return acc.getBalance();
 	}
 	
 	
