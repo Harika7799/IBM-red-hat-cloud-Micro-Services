@@ -9,7 +9,7 @@ public interface Student_D {
 	
 	public Student createStudent(Student Stu);
 	public List<Student> displayAllStudent();
-	public Student getStudentById(Integer id);
+	public Student findById(Integer id);
 	public Student updateStudent(Integer id);
 	public void deleteStudent(Integer id);
 

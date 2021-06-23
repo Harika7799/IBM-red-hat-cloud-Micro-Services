@@ -24,7 +24,7 @@ public class Student_I implements Student_S{
 	}
 
 	@Override
-	public Student getStudentById(Integer id) {
+	public Student findById(Integer id) {
 		
 		return S1.getStudentById(id);
 	}

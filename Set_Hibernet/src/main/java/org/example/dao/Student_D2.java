@@ -39,12 +39,7 @@ public class Student_D2 implements Student_D {
 		return query.getResultList();
 	}
 
-	@Override
-	public Student getStudentById(Integer id) {
 	
-		session=sf.openSession();
-		return session.get(Student.class, id);
-	}
 
 	@Override
 	public Student updateStudent(Integer id) {
@@ -81,6 +76,12 @@ public class Student_D2 implements Student_D {
 		session.getTransaction().begin();
 		session.remove(del);
 		session.getTransaction().commit();
+	}
+
+	@Override
+	public Student findById(Integer id) {
+		session=sf.openSession();
+		return session.get(Student.class, id);
 	}
 		
 	}
