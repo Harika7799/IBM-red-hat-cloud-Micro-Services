@@ -1,5 +1,4 @@
-package org.example.instructor;
-
+package org.example.demo;
 import javax.persistence.CascadeType;
 
 import javax.persistence.Column;
@@ -20,16 +19,18 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 @Entity
-@Table(name = "instructor_detail")
-public class InstructorDetails {
+@Table(name ="users")
+public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	@Column(name = "youtube_channel")
-	private String youtubeChannel;
-	@Column(name = "hobby")
-	private String hobby;
-	@OneToOne(mappedBy = "instructorDetails",cascade = CascadeType.ALL)
-	private Instructor instructor;
+	@Column(name ="User_Name")
+	private String U_Name;
+	@OneToOne(cascade =CascadeType.ALL)
+	@JoinColumn(name ="A_Id")
+	private Addres A_Details;
+	
+	
+	
 
 }
