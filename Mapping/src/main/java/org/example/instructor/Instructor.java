@@ -1,12 +1,15 @@
 package org.example.instructor;
-import javax.persistence.CascadeType;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -36,7 +39,21 @@ public class Instructor {
 			CascadeType.REFRESH,
 			CascadeType.REMOVE
 	})
-	@JoinColumn(name = "instructor_detail_id")
+	//@JoinColumn(name = "instructor_detail_id")
 	private InstructorDetails instructorDetails;
-
+	@OneToMany(mappedBy ="instructor",cascade = {
+			CascadeType.DETACH,
+			CascadeType.MERGE,
+			CascadeType.PERSIST,
+			CascadeType.REFRESH
+	})
+	private List<Course> courses;
+public void add(Course t_C) {
+	if (courses == null)
+	{
+		courses =new ArrayList<Course>();
+	}
+	courses.add(t_C);
+	t_C.setInstructor(this);
+}
 }
