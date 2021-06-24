@@ -3,6 +3,7 @@ package org.example.Spring;
 import org.example.main.MyInterface;
 import org.example.main.SpecialEditionCD;
 import org.example.model.Coach;
+import org.example.model.Customer;
 import org.example.model.InternationalCD;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -31,15 +32,17 @@ public class App
 		System.out.println(cd.getDetails());
 		
 		MyInterface cd2=context.getBean("theInterface",MyInterface.class);
-		System.out.println(cd2.getDetails());*/
+		System.out.println(cd2.getDetails());
     	Coach t_C = context.getBean("theCoach",Coach.class);
     	System.out.println(t_C.getDailyworkOut());
-    	System.out.println(t_C.getDailyFortune());
+    	System.out.println(t_C.getDailyFortune());*/
+    	Customer t_C = context.getBean("theCustomer",Customer.class);
+    	System.out.println(t_C);
 	 
     	}catch(Exception e)
         {
         	e.printStackTrace();
-        	e.printStackTrace();
+        	//e.printStackTrace();
         }
     }
 }

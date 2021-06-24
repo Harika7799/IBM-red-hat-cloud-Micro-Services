@@ -13,9 +13,29 @@
 <constructor-arg index="1" value="Spanish"/>
 <constructor-arg index="2" value="Burma"/>
 </bean> -->
-<bean name="theCoach" class="org.example.model.CricketCoach">
+<!-- <bean name="theCoach" class="org.example.model.CricketCoach">
 	<property name="fortuneService" ref="myFortuneService"/>
 	</bean>
 	<bean name="myFortuneService"
-		class="org.example.model.HappyFortuneService"/>
+		class="org.example.model.HappyFortuneService"/> -->
+
+ <bean name="theCustomer" class="org.example.model.Customer">
+	 
+	 <property name="Customer_Id" value="10"/>
+	 <property name="Customer_Name" value="John Doe"/>
+	 <property name="address" ref="theAddress"/>
+	 <property name="branch" ref="theBranch"/>
+	 </bean> 
+	 <bean name="theAddress" class="org.example.model.Address">
+	 <constructor-arg name="A_Line1" value="Telengana"/>
+	 <constructor-arg name="A_Line2" value="India"/>
+	 <constructor-arg name="City" value="Hyderabad"/>
+	 <constructor-arg name="zip" value="56001"/>
+	 </bean>
+	 
+	 <bean name="theBranch" class="org.example.model.Branch">
+	 <property name="branchId" value="10"/>
+	 <property name="branchName" value="branch-10"/>
+	 <property name="branchAddress" value="address-10"/>
+	 </bean>
 </beans>
