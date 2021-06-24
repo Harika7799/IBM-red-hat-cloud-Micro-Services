@@ -8,9 +8,14 @@
 <constructor-arg index="1" value="Titanic"/>
 <constructor-arg index="2" value="French"/>
 </bean> -->
-<bean name="theInterface" class="org.example.main.SpecialEditionCD">
+<!-- <bean name="theInterface" class="org.example.main.SpecialEditionCD">
 <constructor-arg index="0" value="500"/>
 <constructor-arg index="1" value="Spanish"/>
 <constructor-arg index="2" value="Burma"/>
-</bean>
+</bean> -->
+<bean name="theCoach" class="org.example.model.CricketCoach">
+	<property name="fortuneService" ref="myFortuneService"/>
+	</bean>
+	<bean name="myFortuneService"
+		class="org.example.model.HappyFortuneService"/>
 </beans>

@@ -28,13 +28,17 @@ public class App
 		cd.setCdId(101);
 		cd.setCdName("Godzila");
 		cd.setLanguage("Russian");
-		System.out.println(cd.getDetails());*/
+		System.out.println(cd.getDetails());
 		
 		MyInterface cd2=context.getBean("theInterface",MyInterface.class);
-		System.out.println(cd2.getDetails());
+		System.out.println(cd2.getDetails());*/
+    	Coach t_C = context.getBean("theCoach",Coach.class);
+    	System.out.println(t_C.getDailyworkOut());
+    	System.out.println(t_C.getDailyFortune());
 	 
     	}catch(Exception e)
         {
+        	e.printStackTrace();
         	e.printStackTrace();
         }
     }
