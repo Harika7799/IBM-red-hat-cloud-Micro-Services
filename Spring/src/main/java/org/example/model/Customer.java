@@ -3,11 +3,17 @@ package org.example.model;
 public class Customer {
 	
 	
+	
+
 	private Integer Customer_Id;
 	private String Customer_Name;
 	private Address address;
 	private Branch branch;
 	
+	public Customer() {
+		super();
+	}
+
 	/*public Customer(Integer customer_Id, String customer_Name, Address address) {
 		super();
 		this.Customer_Id = customer_Id;
