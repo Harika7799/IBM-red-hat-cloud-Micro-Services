@@ -24,4 +24,11 @@ public class Book_S2 implements Book_S1{
 		return book_D2.displayAllBook();
 	}
 
+
+	@Override
+	public Book createBook(Book book) {
+
+		return book_D2.createBook(book);
+	}
+
 }

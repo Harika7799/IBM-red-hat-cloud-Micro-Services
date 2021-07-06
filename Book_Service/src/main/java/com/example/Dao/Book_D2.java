@@ -29,4 +29,13 @@ public class Book_D2 implements Book_D1 {
 		return bookMap.values();
 	}
 
+
+
+	@Override
+	public Book createBook(Book book) {
+		book.setBook_Id(UUID.randomUUID().toString());
+		bookMap.put(new Random().nextInt(1000), book);
+		return book;
+	}
+
 }
