@@ -31,4 +31,11 @@ public class Book_S2 implements Book_S1{
 		return book_D2.createBook(book);
 	}
 
+
+	@Override
+	public Book findById(Integer id) {
+		
+		return book_D2.findById(id);
+	}
+
 }

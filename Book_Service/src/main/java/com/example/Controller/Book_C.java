@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -32,7 +33,11 @@ public ResponseEntity<Book> createBook(@RequestBody Book book)
 {
 	return ResponseEntity.status(HttpStatus.CREATED).body(book_S2.createBook(book));
 }
-
+@GetMapping("/api/books/{bookId}")
+public ResponseEntity<Book> findBookById(@PathVariable("bookId") Integer bookId)
+{
+	return ResponseEntity.ok(book_S2.findById(bookId));
+}
 
 
 }

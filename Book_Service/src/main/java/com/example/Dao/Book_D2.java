@@ -1,6 +1,7 @@
 package com.example.Dao;
 
 import java.util.Collection;
+
 import java.util.Map;
 import java.util.Random;
 import java.util.UUID;
@@ -11,6 +12,7 @@ import com.example.demo.model.Book;
 
 public class Book_D2 implements Book_D1 {
 	private Map<Integer, Book> bookMap;
+	
 	@Autowired
 	public Book_D2(Map<Integer, Book> bookMap) {
 		this.bookMap = bookMap;
@@ -36,6 +38,14 @@ public class Book_D2 implements Book_D1 {
 		book.setBook_Id(UUID.randomUUID().toString());
 		bookMap.put(new Random().nextInt(1000), book);
 		return book;
+	}
+
+
+
+	@Override
+	public Book findById(Integer id) {
+		
+		return bookMap.get(id);
 	}
 
 }
