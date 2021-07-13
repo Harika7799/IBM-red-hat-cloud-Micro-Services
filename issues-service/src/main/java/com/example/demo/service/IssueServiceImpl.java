@@ -79,6 +79,36 @@ public class IssueServiceImpl implements IssueService{
 	}
 
 
+	@Override
+	public Issue UpdateIssue(String description, Issue issue) {
+		Optional<Issue> i1=issueRepository.findById(description);
+		if(i1.isEmpty())
+		{
+			throw new IssueNotFoundException("isue with the given description not found.");
+		}
+		Issue temp=i1.get();
+		temp.setSeverity(issue.getSeverity());
+		temp.setAssignee(issue.getAssignee());
+		temp.setDescription(issue.getAssignee());
+		issueRepository.save(temp);
+		log.info("updated");
+		return temp;
+	}
+
+
+	@Override
+	public Issue RemoveIssue(String description) {
+		Optional<Issue> i1=issueRepository.findById(description);
+		if(i1.isEmpty())
+		{
+			throw new IssueNotFoundException("isue with the given id not found.");
+		}
+		Issue temp=i1.get();
+		issueRepository.delete(temp);
+		return temp;
+	}
+
+
 	
 
 }

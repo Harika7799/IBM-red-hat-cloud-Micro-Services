@@ -11,4 +11,7 @@ public interface IssueService {
 	public java.util.Optional<Issue> findIssueById(String id);
 	public Issue updateIssue(String id, Issue issue);
 	public Issue removeIssue(String id);
+	public Issue UpdateIssue(String description, Issue issue);
+	public Issue RemoveIssue(String description);
+	
 }
