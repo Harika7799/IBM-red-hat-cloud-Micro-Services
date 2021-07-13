@@ -10,5 +10,7 @@ public interface ItemService {
 	public List<ItemResponseModel>getAllItems();
 	public ItemResponseModel findByItemNumber(String itemNumber);
 	public List<ItemResponseModel> findByItemName(String itemName);
+	public ItemResponseModel updateItem(String itemNumber,ItemDto itemDto);
+	public String deleteItem(String itemNumber);
 
 }

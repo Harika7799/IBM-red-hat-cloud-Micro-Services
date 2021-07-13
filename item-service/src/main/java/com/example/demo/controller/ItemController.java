@@ -1,7 +1,10 @@
 package com.example.demo.controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -66,6 +69,19 @@ public class ItemController {
 	public ResponseEntity<ItemResponseModel> getByItemNumber(@PathVariable("itemNumber") String itemNumber)
 	{
 		return ResponseEntity.ok(itemService.findByItemNumber(itemNumber));
+	}
+	@PutMapping("/{itemNumber}")
+	public ResponseEntity<ItemResponseModel> updateItem(@PathVariable("itemNumber") String itemNumber,@RequestBody() ItemResponseModel itemDetails)
+	{
+		modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
+		ItemDto dto=modelMapper.map(itemDetails, ItemDto.class);
+		ItemResponseModel model=itemService.updateItem(itemNumber,dto);
+		return ResponseEntity.status(HttpStatus.OK).body(model);
+	}
+	@DeleteMapping("/{itemNumber}")
+	public ResponseEntity<String> deleteItem(@PathVariable("itemNumber") String itemNumber)
+	{
+		return ResponseEntity.ok(itemService.deleteItem(itemNumber));
 	}
 
 }

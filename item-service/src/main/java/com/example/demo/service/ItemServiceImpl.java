@@ -74,4 +74,30 @@ public class ItemServiceImpl implements ItemService{
 		return models;
 	}
 
+	@Override
+	public ItemResponseModel updateItem(String itemNumber, ItemDto itemDto) {
+		modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
+		Item item=itemDao.findByItemNumber(itemNumber);
+		if(item==null)
+		{
+			throw new ItemNotFoundException("item with "+itemNumber+" not found");
+		}
+		item.setItemName(itemDto.getItemName());
+		item.setItemPrice(itemDto.getItemPrice());
+		item.setIsAvailable(itemDto.getIsAvailable());
+		return modelMapper.map(item, ItemResponseModel.class);
+	}
+
+	@Override
+	public String deleteItem(String itemNumber) {
+		modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
+		Item item=itemDao.findByItemNumber(itemNumber);
+		if(item==null)
+		{
+			throw new ItemNotFoundException("item with "+itemNumber+" not found");
+		}
+		itemDao.delete(item);
+		return "Item Deleted Succesfully";
+	}
+
 }
