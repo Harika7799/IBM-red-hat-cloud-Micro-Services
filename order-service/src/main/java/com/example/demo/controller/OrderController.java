@@ -53,5 +53,17 @@ public class OrderController {
 		List<Item> items=restTemplate.getForObject(uri, List.class);
 		return ResponseEntity.ok(items);
 	}
+	@GetMapping("/orders/items/{itemNumber}")
+	public ResponseEntity<Item> getItemfromItemServiceByItemNumber(@PathVariable("itemNumber") String itemNumber)
+	{
+		String uri="http://localhost:8088/item-service//items/"+itemNumber;
+		Item item =restTemplate.getForObject(uri, Item.class);
+		if(item==null)
+		{
+			System.out.println("not found");
+		}
+		return ResponseEntity.ok(item);
+		
+	}
 
 }
