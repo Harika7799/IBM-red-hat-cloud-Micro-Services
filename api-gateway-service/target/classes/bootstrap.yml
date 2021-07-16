@@ -23,12 +23,12 @@ spring:
       uri: lb://ORDER-SERVICE
       predicates:
         - Path=/order-service/**
+    - id: issues-service
+      uri: lb://ISSUES-SERVICE
+      predicates:
+        - Path=/issues-service/**
     - id: movie-service
       uri: lb://MOVIE-SERVICE
       predicates:
         - Path=/movie-service/**
-    - id: rental-app
-      uri: lb://RENTAL-APP
-      predicates:
-        - Path=/rental-app/**
-   
+    

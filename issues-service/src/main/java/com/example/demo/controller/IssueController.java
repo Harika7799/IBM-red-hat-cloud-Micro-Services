@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.model.Assignee;
 import com.example.demo.model.Issue;
 import com.example.demo.service.IssueService;
 @RestController
@@ -58,4 +59,5 @@ public class IssueController {
 	public ResponseEntity<Issue> deleteIssue(@PathVariable("id") String id) {
 		return ResponseEntity.ok(issueService.removeIssue(id));
 	}
+	
 }
