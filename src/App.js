@@ -1,64 +1,37 @@
-import ExpenseItem from './components/ExpenseItem';
+import React from 'react';
 
-function App() {
-  const expenses = [
-    {
-      id: 'e1',
-      title: 'Toilet Paper',
-      amount: 94.12,
-      date: new Date(2020, 7, 14),
-      isAvailable:true
-    },
-    { id: 'e2',
-      title: 'New TV',
-      amount: 799.49,
-      date: new Date(2021, 2, 12),
-      isAvailable: true
-    },
-    {id: 'e3',
-      title: 'Car Insurance',
-      amount: 294.67,
-      date: new Date(2021, 2, 28),
-      isAvailable: true
-    },
-    {
-      id: 'e4',
-      title: 'New Desk (Wooden)',
-      amount: 450,
-      date: new Date(2021, 5, 12),
-      isAvailable: false
-    },
-  ];
+import NewExpense from './components/NewExpense/NewExpense';
+import Expenses from './components/Expenses/Expenses';
 
-  return (
-      <div>
-        <h2>Let's get started!</h2>
-        <ExpenseItem
-            title={expenses[0].title}
-            amount={expenses[0].amount}
-            date={expenses[0].date}
-            isAvailable={expenses[0].isAvailable}
-        ></ExpenseItem>
-        <ExpenseItem
-            title={expenses[1].title}
-            amount={expenses[1].amount}
-            date={expenses[1].date}
-            isAvailable={expenses[1].isAvailable}
-        ></ExpenseItem>
-        <ExpenseItem
-            title={expenses[2].title}
-            amount={expenses[2].amount}
-            date={expenses[2].date}
-            isAvailable={expenses[2].isAvailable}
-        ></ExpenseItem>
-        <ExpenseItem
-            title={expenses[3].title}
-            amount={expenses[3].amount}
-            date={expenses[3].date}
-            isAvailable={expenses[3].isAvailable}
-        ></ExpenseItem>
-      </div>
-  );
+const App = () => {
+    const expenses = [
+        {
+            id: 'e1',
+            title: 'Hair dryer',
+            amount: 94.12,
+            date: new Date(2021, 7, 31),
+        },
+        { id: 'e2', title: 'Mac-One', amount: 799.49, date: new Date(2020, 9, 12) },
+        {
+            id: 'e3',
+            title: 'Coffe Maker',
+            amount: 294.67,
+            date: new Date(2021, 2, 28),
+        },
+        {
+            id: 'e4',
+            title: 'Key-chair',
+            amount: 450,
+            date: new Date(2021, 5, 12),
+        },
+    ];
+
+    return (
+        <div>
+            <NewExpense />
+            <Expenses items={expenses} />
+        </div>
+    );
 }
 
 export default App;
